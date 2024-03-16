@@ -1,0 +1,3 @@
+appId: "fr.bibus.android"
+---
+- runScript: itineraire.js

@@ -1,0 +1,9 @@
+appId: "com.actigraph.twisto.tabbarapp"
+---
+- runFlow: elements/loadElements.yaml
+- launchApp:
+    clearState: true
+- tapOn: Rechercher un itinéraire
+- inputText: ${output.itineraire.origine}
+- tapOn: ${output.itineraire.slc_origine}
+- inputText: ${output.itineraire.destination}
