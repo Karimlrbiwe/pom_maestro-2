@@ -1,0 +1,26 @@
+# Changer l'id pour lancer le test sur une autre app [1/2]
+appId: "fr.bibus.android" 
+---
+# Changer le nom de l'app pour lancer sur autre app, ex : ../twisto/elements/loadElements.yaml [2/2]
+- runFlow: ../bibus/elements/loadElements.yaml
+- launchApp:
+    clearState: true
+- tapOn: Rechercher un itinéraire
+- inputText: ${output.itineraire.origine}
+- tapOn: ${output.itineraire.slc_origine}
+- inputText: ${output.itineraire.destination}
+- tapOn: ${output.itineraire.slc_destination}
+- assertVisible: Transport en commun
+- assertVisible: Vélo/Trott' perso
+- assertVisible: Voiture perso
+- assertVisible: Marche à pied
+- tapOn: Vélo/Trott' perso
+- assertVisible:
+    id: ${output.itineraire.app_name}:id/resultRoot
+    index: 0
+- tapOn: Voiture perso
+- assertVisible:
+    id: ${output.itineraire.app_name}:id/resultRoot
+- tapOn: Marche à pied
+- assertVisible:
+    id: ${output.itineraire.app_name}:id/resultRoot
