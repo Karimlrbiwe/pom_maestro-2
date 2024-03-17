@@ -9,5 +9,9 @@ output.itineraire= {
     // Recherhe ligne
     nom_ligne: "30",
     resultat_ligne_attendu: "Ligne 30, CAEN Gare SNCF - MONDEVILLE Centre Commercial, TWISTO",
-    arret_1_ligne_attendu : "Gare SNCF"
+    arret_1_ligne_attendu : "Gare SNCF",
+
+    // Favoris
+    favoris_maison: "34 rue du moulin" , 
+    favoris_travail: "15 rue du carel"
 }

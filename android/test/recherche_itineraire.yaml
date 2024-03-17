@@ -1,10 +1,14 @@
-# Changer l'id pour lancer le test sur une autre app [1/2]
-appId: "fr.bibus.android" 
+# Renseigner l'id au moment du lancement du test ==> -e APP_ID=com.actigraph.twisto.tabbarapp  [1/2]
+appId: "${APP_ID}" 
 ---
-# Changer le nom de l'app pour lancer sur autre app, ex : ../twisto/elements/loadElements.yaml [2/2]
+# Changer le nom de l'app pour lancer sur autre app, ex : ../mon_app/elements/loadElements.yaml [2/2]
 - runFlow: ../bibus/elements/loadElements.yaml
 - launchApp:
     clearState: true
+
+# Fermer la page qui apparait au lancement d'ondeasur ondea 
+- runFlow: close_button.yaml
+
 - tapOn: Rechercher un itinéraire
 - inputText: ${output.itineraire.origine}
 - tapOn: ${output.itineraire.slc_origine}

@@ -9,6 +9,10 @@ output.itineraire= {
     // Recherhe ligne
     nom_ligne: "11",
     resultat_ligne_attendu: "Ligne 11, Collège Garibaldi - ESAT, AIX-LES-BAINS - Ondéa",
-    arret_1_ligne_attendu : "Collège Garibaldi"
+    arret_1_ligne_attendu : "Collège Garibaldi",
+
+    // Favoris
+    favoris_maison: "3 rue lamartine", 
+    favoris_travail: "34 chemin des bottes"
 
 }

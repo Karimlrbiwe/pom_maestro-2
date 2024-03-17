@@ -9,5 +9,11 @@ output.itineraire= {
     // Recherhe ligne
     nom_ligne: "30",
     resultat_ligne_attendu: "Ligne 30, NOCTYBUS Gascogne - Les Iles, BIBUS",
-    arret_1_ligne_attendu : "Les Îles"
+    arret_1_ligne_attendu : "Les Îles",
+
+    // Favoris
+    favoris_maison: "3 rue conseil", 
+    favoris_travail: "32 rue de denver"
+    
+    
 }
