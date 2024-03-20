@@ -1,0 +1,3 @@
+appId: "com.is.android.instantannecy"
+---
+- runScript: test_config.js

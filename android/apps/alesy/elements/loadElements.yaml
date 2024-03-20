@@ -1,0 +1,3 @@
+appId: "fr.keolis.alesytransport"
+---
+- runScript: test_config.js

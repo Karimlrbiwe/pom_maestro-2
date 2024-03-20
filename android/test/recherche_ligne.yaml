@@ -2,7 +2,7 @@
 appId: "${APP_ID}"  
 ---
 # Changer le nom de l'app pour lancer sur autre app, ex : ../mon_app/elements/loadElements.yaml [2/2]
-- runFlow: ../bibus/elements/loadElements.yaml 
+- runFlow: ../apps/jvmalin/elements/loadElements.yaml 
 - launchApp:
     clearState: true
 
@@ -11,14 +11,18 @@ appId: "${APP_ID}"
 
 # Recherche de ligne
 - tapOn: "Horaires"
-- assertVisible:
-    id: ${output.itineraire.app_name}:id/container_item
-    index: 7
-- assertVisible:
-    id: ${output.itineraire.app_name}:id/container_item
-    index: 0
+- runFlow:
+    when:
+        visible: ${output.itineraire.app_name}:id/container_item
+    commands:
+        - assertVisible:
+            id: ${output.itineraire.app_name}:id/container_item
+            index: 5
+        - assertVisible:
+            id: ${output.itineraire.app_name}:id/container_item
+            index: 0
 - tapOn:
-    id: "${output.itineraire.app_name}:id/search_button"
+    id: "${output.itineraire.app_name}:id/(search_button|search_src_text)"
 - inputText: "${output.itineraire.nom_ligne}"
 - assertVisible: "${output.itineraire.resultat_ligne_attendu}"
 - tapOn : "${output.itineraire.resultat_ligne_attendu}"

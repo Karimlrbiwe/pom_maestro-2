@@ -2,8 +2,8 @@
 appId: "${APP_ID}" 
 ---
 # Changer le nom de l'app pour lancer sur autre app, ex : ../mon_app/elements/loadElements.yaml [2/2]
-- runFlow: ../bibus/elements/loadElements.yaml
-- launchApp:
+- runFlow: ../apps/jvmalin/elements/loadElements.yaml
+- launchApp :
     clearState: true
 
 # Fermer la page qui apparait au lancement d'ondeasur ondea 
@@ -13,12 +13,12 @@ appId: "${APP_ID}"
 - inputText: ${output.itineraire.origine}
 - tapOn: ${output.itineraire.slc_origine}
 - inputText: ${output.itineraire.destination}
-- tapOn: ${output.itineraire.slc_destination}
+- tapOn: ${output.itineraire.slc_destination} 
 - assertVisible: Transport en commun
-- assertVisible: Vélo/Trott' perso
+- assertVisible: (Vélo/Trott' perso|Vélo/Trottinette) 
 - assertVisible: Voiture perso
 - assertVisible: Marche à pied
-- tapOn: Vélo/Trott' perso
+- tapOn: (Vélo/Trott' perso|Vélo/Trottinette)
 - assertVisible:
     id: ${output.itineraire.app_name}:id/resultRoot
     index: 0
