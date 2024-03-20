@@ -2,8 +2,8 @@ output.itineraire= {
     // Recherche itineraire
     origine: "memorial dep",
     slc_origine: "Mémorial Départemental A.F.N",
-    destination: "laroque",
-    slc_destination: "Laroque, Sauve, Le Vigan, Occitanie",
+    destination: "baroqu",
+    slc_destination: "baroque",
     app_name: "fr.keolis.alesytransport",
 
     // Recherhe ligne

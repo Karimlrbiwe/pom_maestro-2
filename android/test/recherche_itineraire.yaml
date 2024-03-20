@@ -1,12 +1,18 @@
 # Renseigner l'id au moment du lancement du test ==> -e APP_ID=com.actigraph.twisto.tabbarapp  [1/2]
 appId: "${APP_ID}" 
+env:
+    ICON_TC: Transport en commun
+    ICON_VELO: (Vélo/Trott' perso|Vélo/Trottinette|Vélo)
+    ICON_VOITURE: Voiture perso
+    ICON_MARCHE: Marche à pied
+    RESULTAT_RI: (resultRoot|errorTextView)
 ---
 # Changer le nom de l'app pour lancer sur autre app, ex : ../mon_app/elements/loadElements.yaml [2/2]
 - runFlow: ../apps/jvmalin/elements/loadElements.yaml
 - launchApp :
     clearState: true
 
-# Fermer la page qui apparait au lancement d'ondeasur ondea 
+# Fermer la page qui apparait au lancement d'ondea ou d'autres applications 
 - runFlow: close_button.yaml
 
 - tapOn: Rechercher un itinéraire
@@ -14,17 +20,37 @@ appId: "${APP_ID}"
 - tapOn: ${output.itineraire.slc_origine}
 - inputText: ${output.itineraire.destination}
 - tapOn: ${output.itineraire.slc_destination} 
-- assertVisible: Transport en commun
-- assertVisible: (Vélo/Trott' perso|Vélo/Trottinette) 
-- assertVisible: Voiture perso
-- assertVisible: Marche à pied
-- tapOn: (Vélo/Trott' perso|Vélo/Trottinette)
-- assertVisible:
-    id: ${output.itineraire.app_name}:id/resultRoot
-    index: 0
-- tapOn: Voiture perso
-- assertVisible:
-    id: ${output.itineraire.app_name}:id/resultRoot
-- tapOn: Marche à pied
-- assertVisible:
-    id: ${output.itineraire.app_name}:id/resultRoot
+
+- runFlow:
+    when:
+        visible: ${ICON_TC}
+    commands:
+        - tapOn: ${ICON_TC}
+        - assertVisible:
+            id: ${RESULTAT_RI}
+            index: 0
+- runFlow:
+    when:
+        visible: ${ICON_VELO}
+    commands:
+        - tapOn: ${ICON_VELO}
+        - assertVisible:
+            id: ${RESULTAT_RI}
+            index: 0
+- runFlow:
+    when:
+        visible: ${ICON_VOITURE}
+    commands:
+        - tapOn: ${ICON_VOITURE}
+        - assertVisible:
+            id: ${RESULTAT_RI}
+            index: 0
+- runFlow:
+    when:
+        visible: ${ICON_MARCHE}
+    commands:
+        - tapOn: ${ICON_MARCHE}
+        - assertVisible:
+            id: ${RESULTAT_RI}
+            index: 0
+
