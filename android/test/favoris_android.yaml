@@ -2,9 +2,8 @@
 appId: "${APP_ID}"  
 ---
 # Changer le nom de l'app pour lancer sur autre app, ex : ../mon_app/elements/loadElements.yaml [2/2]
-- runFlow: ../apps/jvmalin/elements/loadElements.yaml
-- launchApp:
-    clearState: true
+- runFlow: ../apps/ametis/elements/loadElements.yaml
+- launchApp
 
 # Fermer la page qui apparait au lancement d'ondea sur ondea 
 - runFlow: close_button.yaml

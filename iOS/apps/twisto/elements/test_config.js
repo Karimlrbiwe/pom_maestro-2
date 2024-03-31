@@ -8,12 +8,10 @@ output.itineraire= {
     
     // Recherhe ligne
     nom_ligne: "30",
-    // resultat_ligne_attendu: "Ligne 30, CAEN Gare SNCF - MONDEVILLE Centre Commercial, TWISTO",
-    resultat_ligne_attendu: "CAEN Gare SNCF - MONDEVILLE Centre Commercial",
+    resultat_ligne_attendu: "Ligne 30, CAEN Gare SNCF - MONDEVILLE Centre Commercial, TWISTO",
     arret_1_ligne_attendu : "Gare SNCF",
 
     // Favoris
-    adresse_favoris_defaut:  "Place Louis Guillouard, Caen (14000), Modifier l'adresse du favori",
     favoris_maison: "34 rue du moulin" , 
     favoris_travail: "15 rue du carel"
 }
